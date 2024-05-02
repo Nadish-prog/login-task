@@ -73,9 +73,16 @@ app.post('/updateScores', (req, res) => {
         }
     );
 });
-
-
-
+app.get('/user/:id', (req, res) => {
+    const id = req.params.id;
+    db.query("SELECT * FROM users WHERE id = ?", [id], (err, result) => {
+        if (err) {
+            res.send({ err: err });
+        } else {
+            res.send(result);
+        }
+    });
+});
 app. listen (3001, () => {
     console.log("running server");
 });

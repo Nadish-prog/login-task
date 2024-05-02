@@ -28,7 +28,6 @@ const login =()=>{
         console.log(error);
     });
     };
-
     return (
         <>
         <div className="login">
@@ -42,5 +41,4 @@ const login =()=>{
             </>
     );
 }
-
 export default Login;
